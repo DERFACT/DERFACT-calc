@@ -17,4 +17,4 @@ To exit the calculator, type "exit" in the expression line
 This calculator supports the same mathematical operations as Python 3
 
 ## Usage examples
-![https://notabug.org/DERFACT/DERFACT-calc/raw/2ace88f644286eaba23a6e10c8ca0212c7fc2f50/images/usage-examples.png](https://notabug.org/DERFACT/DERFACT-calc/raw/2ace88f644286eaba23a6e10c8ca0212c7fc2f50/images/usage-examples.png)
+![https://github.com/DERFACT/DERFACT-calc/blob/main/usage-examples.png](https://github.com/DERFACT/DERFACT-calc/blob/main/usage-examples.png)
