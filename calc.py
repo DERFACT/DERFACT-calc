@@ -1,6 +1,6 @@
 import sys
 arg = sys.argv
-mat = '1234567890. +-*/%'
+mat = '1234567890. +-*/%()'
 operations = ['+', '-', '*', '/', '%', '**', '//']
 commands = ['exit', 'Exit', 'exit()']
 result = 0
@@ -22,6 +22,8 @@ def calc(expression):
     expression = ''.join(expression)
     if not expr_errors(expression):
         result = eval(expression)
+        if (result % 1) == 0:
+            result = int(result)
         print(str(result))
     else:
         print('Error: incorrect expression')
@@ -34,6 +36,8 @@ if  len(arg) > 1:
         for expr in arg:
             if not expr_errors(expr):
                 r = eval(expr)
+                if (r % 1) == 0:
+                    r = int(r)
                 results.append(r)
             else:
                 results.append('error')
@@ -42,6 +46,7 @@ if  len(arg) > 1:
     else:
         calc(arg)
 else:
+    print('DERFACT-calc v1.1 final \nCopyright (c) 2022 DERFACT Corporation')
     while True:
         expression = input('>>> ')
         calc(expression.replace(' ', ''))
