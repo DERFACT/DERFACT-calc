@@ -18,6 +18,14 @@ def expr_errors(expression):
         exit()
     return errors
 
+def calc(expression):
+    expression = ''.join(expression)
+    if not expr_errors(expression):
+        result = eval(expression)
+        print(str(result))
+    else:
+        print('Error: incorrect expression')
+
 if  len(arg) > 1:
     arg.pop(0)
     results = []
@@ -32,22 +40,8 @@ if  len(arg) > 1:
         for i in range(len(arg)):
             print(str(arg[i]) + '=' + str(results[i]))
     else:
-        expression = ''.join(arg)
-        if not expr_errors(expression):
-            result = eval(expression)
-            print(result)
-        else:
-            print('Error: invalid expression passed')
+        calc(arg)
 else:
     while True:
-        a = input('Enter the expression: ')
-        b = []
-        for sym in a:
-            if sym != ' ':
-                b.append(sym)
-        c = ''.join(b)
-        if not expr_errors(c):
-            result = eval(c)
-            print(str(result))
-        else:
-            print('Error: incorrect expression entered')
+        expression = input('>>> ')
+        calc(expression.replace(' ', ''))
